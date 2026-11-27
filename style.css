@@ -489,6 +489,15 @@ a { color: inherit; }
   min-height: 120px;
 }
 
+.form-group textarea::placeholder {
+  color: var(--beige);
+  opacity: 0.7;
+}
+
+.form-group select:has(option[value=""]:checked) {
+  color: color-mix(in srgb, var(--beige) 70%, var(--navy));
+}
+
 .form-submit { width: 100%; }
 
 .form-note,

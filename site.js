@@ -49,15 +49,16 @@ if (contactForm) {
 
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    const name = field('name').value.trim();
     const service = field('service').value.trim();
     const body = [
-      'Name: ' + field('name').value.trim(),
+      'Name: ' + name,
       'Phone: ' + field('phone').value.trim(),
       'Service: ' + service,
       '',
       field('message').value.trim().replace(/\r?\n/g, '\r\n'),
     ].join('\r\n');
-    const subject = 'Website inquiry' + (service ? ': ' + service : '');
+    const subject = 'Website inquiry from ' + name + (service ? ': ' + service : '');
     openEmailApp('mailto:' + CONTACT_EMAIL
       + '?subject=' + encodeURIComponent(subject)
       + '&body=' + encodeURIComponent(body));
