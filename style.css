@@ -412,8 +412,6 @@ a { color: inherit; }
 
 .contact-grid { grid-template-columns: 1fr 1fr; }
 
-.contact-intro { margin-bottom: 24px; }
-
 .contact-details,
 .page-aside {
   display: flex;
